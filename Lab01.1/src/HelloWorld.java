@@ -8,6 +8,6 @@ class HelloWorld {
 //    This is the starting point or entry point for every standalone Java application
     public static void main(String[] args) {
         System.out.println("Hello from IntelliJ"); // This prints to the console
-        System.out.printline("This is nicer than bare metal programming");
+        System.out.println("This is nicer than bare metal programming");
     }
 }

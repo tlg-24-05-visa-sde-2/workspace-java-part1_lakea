@@ -7,26 +7,36 @@ class TelevisionClient {
     public static void main(String[] args) {
         // create an instance of television and set its properties
         Televison tv1 = new Televison();
-        tv1.brand = "Samsung";
-        tv1.volume = 32;
+        tv1.setBrand("Samsung");
+        tv1.setVolume(32);
 
         // create a second instance of Television and set its properties also
         Televison tv2 = new Televison();
-        tv2.brand = "Sony";
-        tv2.volume = 50;
+        tv2.setBrand("Sony");
+        tv2.setVolume(50);
 
         //Create a 3rd television object but DON'T set its propeties
         Televison tv3 = new Televison();
 
-        //turn them all on
         tv1.turnOn();
-        tv2.turnOn();
-        tv3.turnOn();
-
-        //turn them all off
         tv1.turnOff();
+        // tv1.connectedToInternet():
+        System.out.println(tv1.toString()); //automatically called
+        System.out.println();
+
+
+        tv2.turnOn();
         tv2.turnOff();
+        System.out.println(tv2);
+        System.out.println();
+
+
+        tv3.turnOn();
         tv3.turnOff();
+        System.out.println(tv3);
+        System.out.println();
+
+
 
     }
 }

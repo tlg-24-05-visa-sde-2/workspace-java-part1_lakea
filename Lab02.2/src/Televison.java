@@ -4,15 +4,43 @@
 */
 class Televison {
     //properties or attributes - "fields" or "instance variables"
-    String brand = "Toshiba"; //Default volume when not specified
-    int volume = 1;
+    String brand = "Samsung"; //Default volume when not specified
+    int volume = 15;
 
     // functions or operations - "methods"
-    void turnOn() {
-        System.out.println("Turning on you " +brand + " television to volume " + volume);
+    public void turnOn() {
+        boolean isConnected = connectToInternet();
+        System.out.println("Turning on you " +brand + " television and setting volume to " + volume);
     }
-    void turnOff() {
+    public void turnOff() {
         System.out.println("Shutting down...goodbye");
     }
 
+    private boolean connectToInternet() {
+        return true;
+    }
+
+    // accessor methods - getters, setters, toString
+    public String getBrand() {
+        return brand;
+    }
+
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public int getVolume() {
+
+        return volume; }
+
+    public String toString() {
+        return "Television: " +
+                "Brand = " + brand +
+                ", Volume = " + volume;
+    }
+
+    public void setVolume(int i) {
+
+    }
 }

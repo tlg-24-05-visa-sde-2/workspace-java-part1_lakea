@@ -2,10 +2,18 @@
 *Application class to model the workings of an AlarmClock.
 * This class will not have a main() method, most such classes do not.
  */
-
 class AlarmClock {
     // properties or attributes - these are called "instance variables" or "fields" in Java
    private int snoozeInterval = 5; //This is the default value when client doesn't specify one (instead of 0)
+
+    // constructors
+    public AlarmClock() {
+        // no operations
+    }
+
+    public AlarmClock(int snoozeInterval) {
+        setSnoozeInterval(snoozeInterval);      // delegate to setter for validation/conversion (if any)
+    }
 
     // functions or operations - these are called "methods" in Java
    public void snooze() {

@@ -2,10 +2,19 @@
 *Application or system class to model the workings of a television.
 *It has properties/attributes, it has business methods, but NO main() method.
 */
-class Televison {
+class Television {
+    // class-level "static" variable - these live in the "shared-area
     //properties or attributes - "fields" or "instance variables"
     String brand = "Samsung"; //Default volume when not specified
     int volume = 15;
+
+    // constructor - these get turned on when the client says new
+    public Television(String brand, int volume) {
+        this();
+        setBrand(brand);
+        setVolume(volume);
+
+    }
 
     // functions or operations - "methods"
     public void turnOn() {

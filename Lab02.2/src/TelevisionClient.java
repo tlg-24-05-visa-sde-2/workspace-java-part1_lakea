@@ -6,17 +6,17 @@ class TelevisionClient {
 
     public static void main(String[] args) {
         // create an instance of television and set its properties
-        Televison tv1 = new Televison();
+        Television tv1 = new Television();
         tv1.setBrand("Samsung");
         tv1.setVolume(32);
 
         // create a second instance of Television and set its properties also
-        Televison tv2 = new Televison();
+        Television tv2 = new Television();
         tv2.setBrand("Sony");
         tv2.setVolume(50);
 
         //Create a 3rd television object but DON'T set its propeties
-        Televison tv3 = new Televison();
+        Television tv3 = new Television();
 
         tv1.turnOn();
         tv1.turnOff();

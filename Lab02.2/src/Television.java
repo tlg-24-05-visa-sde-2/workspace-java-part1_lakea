@@ -8,43 +8,49 @@ class Television {
     public static final int MAX_VOLUME = 100;
     private static int instanceCount = 0;
 
+    public Television(String brand, int volume) {
+
+    }
+
     public static int getInstanceCount() {
+        return instanceCount;
         // boolean isConnected = verifyInternetConnection();
         // ^^^ cannot be called here bc static methods can't directly call instance methods
         // w/o having a reference to a specific instance (object)
-        return instanceCount;
     }
-    // ****************************************************************************
+    // ______________________________________________________________________________________________________
 
     // properties or attributes - "fields" or "instance variables"
     // default values when values are not specified
-    private String brand = "Toshiba";
-    private int volume = 1;
+    private String brand;
+    private int volume;
+    private DisplayType display = DisplayType.LED;
 
-    // constructors
+    private boolean isMuted;            // for muting behavior
+    private int oldVolume;              // for muting behavior
+
+    // constructors - these get called when the client says "NEW"
     public Television() {
         instanceCount++;
     }
 
     public Television(String brand) {
-        this();
-        setBrand(brand);
+        this();         // delegate to no argument constructor above for the increment
+        setBrand(brand);    // delegate to setter for any validation/conversion it might be doing
     }
 
-    public Television(String brand, int volume) {
-        this(brand);
-        setVolume(volume);
+    public Television(String brand, int volume, DisplayType display) {
+        this(brand, volume);
+        setDisplay(display);
     }
 
-    // methods
+    // functions or operations - "methods"
+    // business or "action" methods
 
     public void turnOn() {
         // call private method for this task
         boolean isConnected = verifyInternetConnection();
         // System.out.println(verifyInternetConnection());
-        System.out.println();
-
-
         System.out.println("Turning on your " + getBrand() + " television to volume " + getVolume());
     }
 
@@ -58,30 +64,56 @@ class Television {
     }
 
     public void setBrand(String brand) {
-        //TODO
-        // validate brand, samdung, lg, sony, toshiba only valid brands
-        // you can use a switch to test value
-        this.brand = brand;
+        public void setBrand(String brand) {
+            switch (brand) {
+                case "Samsung":
+                case "LG":
+                case "Sony":
+                case "Toshiba":
+                    this.brand = brand;
+                    break;
+                default:
+                    System.out.println("Invalid brand: " + brand + "." +
+                            " Valid brands are: Samsung, LG, Sony, Toshiba.");
+            }
+        }
     }
 
+    /*
+    if (brand.equals("Samsung") ||
+    brand.equals("LG") ||
+    brand.equals("Sony") ||
+    brand.equals("Toshiba")) {
+    this.brand = brand;
+    }
+    else (
+    System,out,println("Invalid brand: " + brand + "." +
+    " Valid brands are: Samsung, LG, Sony, Toshiba.");
+    }
+     */
     public int getVolume() {
         return volume;
     }
 
     public void setVolume(int volume) {
-        //TODO if greater than or equal to 0 && less than or equal to 100
-        // this.volume = volume
-        // else error message
-        this.volume = volume;
+       if (MIN_VOLUME <= volume && <= MAX_VOLUME) {
+           this.volume = volume;
+           isMuted = false;         // clear the isMuted flag in case we were muted
+        }
+       else {
+            System.out.println("Invalid volume: " + volume + ". " +
+                    "Valid range is " + MIN_VOLUME + " to " + MAX_VOLUME + " (inclusive).");
+        }
     }
-
-    /*TODO muting behavior television class
-     * muting sets volume to 0
-     * unmuting returns volume to what it was before muting
-     * fields: isMuted holds muted state,  oldVolume restores volume when unmuting
-     * needs a getter method
-     */
-
+public DisplayType getDisplay() {
+        return display;
+}
+public void setDisplay(DisplayType display) {
+        this.display = display;
+}
+  public boolean() {
+        return isMuted;
+    }
 
     private boolean verifyInternetConnection() {
         return true; // fake implementation
@@ -89,6 +121,8 @@ class Television {
 
     //toString()
     public String toString() {
-        return "Television: brand=" + getBrand() + ", volume=" + getVolume();
+        String volumeString = isMuted() ? "<muted>" : String.valueOf(getVolume())
+        return "Television: brand=" + getBrand() + ", volume=" + volumeString +
+                ", display=" + getDisplay();
     }
 }

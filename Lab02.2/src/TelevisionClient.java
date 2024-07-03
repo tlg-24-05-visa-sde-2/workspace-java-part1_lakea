@@ -5,19 +5,25 @@
 class TelevisionClient {
     //entry point
     public static void main(String[] args) {
-        System.out.println(Television.getInstanceCount() + " instances");
-        //instance of tv, set its properties
-        Television tv1 = new Television("Samsung", 32);
-
-        Television tv2 = new Television("Sony", Television.MAX_VOLUME);
-
-        //3rd tv object
-        Television tv3 = new Television("LG", Television.MIN_VOLUME);
+        System.out.println(Television.getInstanceCount() + " instances have been created");
+        System.out.println();
 
 
+        // create instance of Television, set its properties
+        Television tv1 = new Television();
+        tv1.setBrand("Samsung");
+        tv1.setVolume(32);
+        tv1.setDisplay(DisplayType.PLASMA);
+
+        // create 2nd instance of Television using its brand volume display constructor
+        Television tv2 = new Television("Sony", 50, DisplayType.OLED);
+
+        // create 3rd Television object, and give it the maximum volume
+        Television tv3 = new Television("LG", Television.MAX_VOLUME);  // CRANK IT UP!!
+
+        // turn them all on and off
         tv1.turnOn();
         tv1.turnOff();
-        // tv1.verifyInternetConnection(); // private method in Television, no access
         tv2.turnOn();
         tv2.turnOff();
         tv3.turnOn();

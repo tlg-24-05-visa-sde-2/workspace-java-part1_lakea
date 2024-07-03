@@ -96,13 +96,16 @@ class Television {
     }
 
     public void setVolume(int volume) {
-       if (MIN_VOLUME <= volume && <= MAX_VOLUME) {
+       if (MIN_VOLUME <= volume && volume <= MAX_VOLUME) {
            this.volume = volume;
            isMuted = false;         // clear the isMuted flag in case we were muted
         }
        else {
-            System.out.println("Invalid volume: " + volume + ". " +
-                    "Valid range is " + MIN_VOLUME + " to " + MAX_VOLUME + " (inclusive).");
+            System.out.printf("Invalid volume: %s. Valid range is %s is %s (inclusive). \n",
+                    volume, MIN_VOLUME, MAX_VOLUME);
+
+//            System.out.println("Invalid volume: " + volume + ". " +
+//                    "Valid range is " + MIN_VOLUME + " to " + MAX_VOLUME + " (inclusive).");
         }
     }
 public DisplayType getDisplay() {
@@ -121,8 +124,11 @@ public void setDisplay(DisplayType display) {
 
     //toString()
     public String toString() {
-        String volumeString = isMuted() ? "<muted>" : String.valueOf(getVolume())
-        return "Television: brand=" + getBrand() + ", volume=" + volumeString +
-                ", display=" + getDisplay();
-    }
+        String volumeString = isMuted() ? "<muted>" : String.valueOf(getVolume());
+                return String.format("Television: brand=%s, volume=%s, display=%s",
+                        getBrand(), getVolume(), getDisplay());
+
+//        return "Television: brand=" + getBrand() + ", volume=" + volumeString +
+//                ", display=" + getDisplay();
+//    }
 }

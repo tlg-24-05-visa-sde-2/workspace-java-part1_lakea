@@ -47,7 +47,7 @@ class Movie {
         this.revenue = revenue;
     }
 
-    public int getReleaseYear() {
+    public Integer getReleaseYear() {
         return releaseYear;
     }
 
@@ -72,7 +72,13 @@ class Movie {
     }
 
     public String toString() {
-        return "Movie: title=" + getTitle() + ", releaseYear=" + getReleaseYear() +
-                ", revenue=" + getRevenue() + ", rating=" + getRating();
+        //TODO: make it right so that a null revenue shows up as null,
+        // and a non-null shows up as 123,000,345.94.
+
+        //HINT: if revenue is null use %s, if   use %f
+        return String.format("Movie: title=%s, releaseYear=%s, revenue=$%,.2f, rating=%s, genre=%s",
+        getTitle(), getReleaseYear(), getRevenue(), getRating(), getGenre());
     }
-}
+//        return "Movie: title=" + getTitle() + ", releaseYear=" + getReleaseYear() +
+//                ", revenue=" + getRevenue() + ", rating=" + getRating();
+    }

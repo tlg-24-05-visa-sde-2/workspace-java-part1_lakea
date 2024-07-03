@@ -1,9 +1,9 @@
 class Movie {
     // fields or instance variables
     private String title;
-    private int releaseYear;
-    private double revenue;
-    private Rating rating = Rating.PG;
+    private Integer releaseYear;
+    private Double revenue;
+    private Rating rating;
     private Genre genre;
 
     // constructors - these get called when the client says new]
@@ -19,7 +19,7 @@ class Movie {
         this(title);
         setGenre(genre);
     }
-    public Movie(String title, int releaseYear, double revenue, Rating rating, Genre genre) {
+    public Movie(String title, Integer releaseYear, double revenue, Rating rating, Genre genre) {
         this(title);            // delegate to the 2-arg constructor above me for title, genre
         setReleaseYear(releaseYear);        // delegate to setters for the rest of them
         setRevenue(revenue);                // by delegating to their respective setters
@@ -39,11 +39,11 @@ class Movie {
         this.title = title;
     }
 
-    public double getRevenue() {
+    public Double getRevenue() {
         return revenue;
     }
 
-    public void setRevenue(double revenue) {
+    public void setRevenue(Double revenue) {
         this.revenue = revenue;
     }
 
@@ -51,7 +51,7 @@ class Movie {
         return releaseYear;
     }
 
-    public void setReleaseYear(int releaseYear) {
+    public void setReleaseYear(Integer releaseYear) {
         this.releaseYear = releaseYear;
     }
 

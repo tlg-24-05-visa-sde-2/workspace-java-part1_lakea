@@ -3,6 +3,8 @@ class Movie {
     private String title;
     private int releaseYear;
     private double revenue;
+    private Rating rating = Rating.PG;
+    private Genre genre;
 
     // constructors - these get called when the client says new]
     public Movie() {
@@ -12,10 +14,16 @@ class Movie {
     public Movie(String title) {
         setTitle(title);
     }
-    public Movie(String title, int releaseYear, double revenue) {
-        this(title);            // delegate to the ctor above me for title
+
+    public Movie(String title, Genre genre) {
+        this(title);
+        setGenre(genre);
+    }
+    public Movie(String title, int releaseYear, double revenue, Rating rating, Genre genre) {
+        this(title);            // delegate to the 2-arg constructor above me for title, genre
         setReleaseYear(releaseYear);        // delegate to setters for the rest of them
-        setRevenue(revenue);
+        setRevenue(revenue);                // by delegating to their respective setters
+        setRating(rating);
     }
 
     // business or action methods
@@ -46,8 +54,25 @@ class Movie {
     public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
     }
+
+    public Rating getRating() {
+        return rating;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
     public String toString() {
         return "Movie: title=" + getTitle() + ", releaseYear=" + getReleaseYear() +
-                ", revenue=" + getRevenue();
+                ", revenue=" + getRevenue() + ", rating=" + getRating();
     }
 }

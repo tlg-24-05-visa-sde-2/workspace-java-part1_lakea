@@ -1,18 +1,19 @@
-class SongClient {
+public class SongClient {
 
     public static void main(String[] args) {
-        // create a Song object and set its properties via individual setter calls
-       Song s1 = new Song();
-        s1.setGenre = "R&B";
-        s1.setArtist = "Brent Faiyez";
-        s1.setName= "WY@";
+        // Create a Song object and set its properties via individual setter calls
+        Song s1 = new Song();
+        s1.setGenre("R&B");
+        s1.setArtist("Brent Faiyaz");
+        s1.setName("WY@");
 
-        s1.play("WY@");
+        // Perform actions on the song
+        s1.play();
         s1.pause();
         s1.shuffle();
-        s1.stop();
-        System.out.println();
+        // Assuming stop() method is part of Song class, otherwise remove this line
 
-
+        // Print song details
+        System.out.println(s1);
     }
 }

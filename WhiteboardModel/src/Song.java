@@ -1,11 +1,19 @@
-class Song {
-// properties or attributes (limit to 5 or 6)
-   private String name;
-   private String setGenre; //constraint: (Hip Hop, R&B. Old School)
-   private String setArtist;
+public class Song {
 
-   // constraints
+    private String name;
+    private String genre;
+    private String artist;
+
+    // Constructors, getters, setters, toString() method, and other methods
+
     public Song() {
+        // Default constructor
+    }
+
+    public Song(String name, String genre, String artist) {
+        this.name = name;
+        this.genre = genre;
+        this.artist = artist;
     }
 
     public String getName() {
@@ -16,92 +24,43 @@ class Song {
         this.name = name;
     }
 
-    public String getSetGenre() {
-        return setGenre;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setSetGenre(String setGenre) {
-        this.setGenre = setGenre;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public String getSetArtist() {
-        return setArtist;
+    public String getArtist() {
+        return artist;
     }
 
-    public void setSetArtist(String setArtist) {
-        this.setArtist = setArtist;
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 
-//    public Song(String name) {
-//        setName(name);
-//    }
-//
-//    public Song(String name, String genre) {
-//        this(name);
-//        setGenre(genre);
-//    }
-//
-//    public Song(String name, String genre, String artist) {
-//        this(name, genre);
-//        setArtist(artist);
-//    }
-}
-
-//functions or behaviors - what do Song objects do?
-
-public String getName() {
-    return name;
-}
-
-public void setName(String name) {
-    this.name = name;
-}
-
-public String getSetGenre() {
-    return setGenre;
-}
-
-public void setSetGenre(String setGenre) {
-    this.setGenre = setGenre;
-}
-
-public String getSetArtist() {
-    return setArtist;
-}
-
-public void setSetArtist(String setArtist) {
-    this.setArtist = setArtist;
-}
-
-public Song(String name) {
-    setName(name);
-}
-
-
-
-
- public void play(String setSong) {
-    System.out.println("Now playing... " + "artist" + " song");
+    public void play() {
+        System.out.println("Playing: " + artist + " - " + name);
+    }
 
     public void pause() {
-        System.out.println("Pausing..." + "artist" + " song";
+        System.out.println("Pausing: " + artist + " - " + name);
     }
-
-    public void changeSong() {
-         System.out.println("Changing song " + "artist" + " song");
-     }
 
     public void shuffle() {
         System.out.println("Shuffling all songs in library");
     }
 
-    // accessor methods - provide controlled access to the object's field
-}
-@Override
-public String toString() {
-    return "Song{" +
-            "setArtist='" + setArtist + '\'' +
-            ", setGenre='" + setGenre + '\'' +
-            ", name='" + name + '\'' +
-            '}';
+    // Assuming stop() method does not exist, so it's removed
+    // If needed, implement and add it to the class
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "name='" + name + '\'' +
+                ", genre='" + genre + '\'' +
+                ", artist='" + artist + '\'' +
+                '}';
+    }
 }

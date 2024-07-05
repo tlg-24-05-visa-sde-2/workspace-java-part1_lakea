@@ -72,7 +72,8 @@ class Television {
                 this.brand = brand;
                 break;
             default:
-                System.out.println("Invalid brand: " + brand + ". Valid brands are: Samsung, LG, Sony, Toshiba.");
+                System.out.println("Invalid brand: " + brand + " ." +
+                        " Valid brands are: Samsung, LG, Sony, Toshiba.");
         }
     }
 

@@ -9,12 +9,12 @@ class MovieClient {
         System.out.println();
 
 
-        Movie movie3 = new Movie("Finding Nemo", 2003, 940_000_000.0, Rating.G, Genre.MYSTERY); {
-            System.out.println(movie3);     //toString() automatically called
+        Movie movie2 = new Movie("Finding Nemo", 2003, 940_000_000.0, Rating.G, Genre.MYSTERY); {
+            System.out.println(movie2);     //toString() automatically called
             System.out.println();
 
-            Movie movie4 = new Movie("Adventures of Jay and DeShon", Genre.MYSTERY);
-            System.out.println(movie4);
+            Movie movie3 = new Movie("Adventures of Jay and DeShon", Genre.MYSTERY);
+            System.out.println(movie3);
             System.out.println();
         }
     }

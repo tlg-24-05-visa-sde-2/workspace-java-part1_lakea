@@ -64,20 +64,18 @@ class Television {
     }
 
     public void setBrand(String brand) {
-        public void setBrand(String brand) {
-            switch (brand) {
-                case "Samsung":
-                case "LG":
-                case "Sony":
-                case "Toshiba":
-                    this.brand = brand;
-                    break;
-                default:
-                    System.out.println("Invalid brand: " + brand + "." +
-                            " Valid brands are: Samsung, LG, Sony, Toshiba.");
-            }
+        switch (brand) {
+            case "Samsung":
+            case "LG":
+            case "Sony":
+            case "Toshiba":
+                this.brand = brand;
+                break;
+            default:
+                System.out.println("Invalid brand: " + brand + ". Valid brands are: Samsung, LG, Sony, Toshiba.");
         }
     }
+
 
     /*
     if (brand.equals("Samsung") ||
@@ -114,7 +112,7 @@ public DisplayType getDisplay() {
 public void setDisplay(DisplayType display) {
         this.display = display;
 }
-  public boolean() {
+  public boolean isMuted() {
         return isMuted;
     }
 
@@ -122,13 +120,14 @@ public void setDisplay(DisplayType display) {
         return true; // fake implementation
     }
 
-    //toString()
     public String toString() {
         String volumeString = isMuted() ? "<muted>" : String.valueOf(getVolume());
-                return String.format("Television: brand=%s, volume=%s, display=%s",
-                        getBrand(), getVolume(), getDisplay());
+        return String.format("Television: brand=%s, volume=%s, display=%s",
+                getBrand(), volumeString, getDisplay());
+    }
 
 //        return "Television: brand=" + getBrand() + ", volume=" + volumeString +
 //                ", display=" + getDisplay();
 //    }
-}
+};
+

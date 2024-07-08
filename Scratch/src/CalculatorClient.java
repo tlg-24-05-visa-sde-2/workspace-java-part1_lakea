@@ -12,5 +12,9 @@ class CalculatorClient {
         System.out.println();
 
         System.out.println("winner is: " + Calculator.randomInt(10));
+
+        System.out.println();
+
+        System.out.println("average is: " + Calculator.average(3, 4, 9, 2, 3)); //convenient!
     }
 }

@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /*
  * Application or system class model the workings of a television
  * it has properties/attributes and business methods but no main() method
@@ -6,17 +9,34 @@ class Television {
     // class-level "static" variables - these live in the "shared area" above the instances, ALL_CAP naming
     public static final int MIN_VOLUME = 0;
     public static final int MAX_VOLUME = 100;
+
+    // DISCLAIMER: the proper way would be to use a Brand enum
+    // We will do it this way for labs, just for practive with arrays and loops
+    public static final String[] VALID_BRANDS = {"Samsung","LG", "Sony", "Toshiba"};
+
     private static int instanceCount = 0;
 
     public Television(String brand, int volume) {
 
     }
 
+// this method is also "up there" in the shared zone, it doesn't execute inside a Television
     public static int getInstanceCount() {
         return instanceCount;
-        // boolean isConnected = verifyInternetConnection();
-        // ^^^ cannot be called here bc static methods can't directly call instance methods
-        // w/o having a reference to a specific instance (object)
+    }
+
+    // Recall: all static methods are called as Television,methodName()
+    //in this case that means Television.isValidBrand()
+    public static boolean isValidBrand(String brand) {
+        boolean valid = false;
+
+        for(String currentBrand : VALID_BRANDS) {
+            if (currentBrand.equals(brand)) {       // we have a match
+                valid = true;
+                break;      //no need to keep looking once brand is found
+            }
+        }
+        return valid;
     }
     // ______________________________________________________________________________________________________
 
@@ -63,17 +83,16 @@ class Television {
         return brand;
     }
 
+    // DISCLAIMER: the proper way would be to use a Brand enum
+    // We will do it this way for labs, just for practice with arrays and loops
+    // VALID_BRANDS are "Samsung","LG", "Sony", "Toshiba"
     public void setBrand(String brand) {
-        switch (brand) {
-            case "Samsung":
-            case "LG":
-            case "Sony":
-            case "Toshiba":
-                this.brand = brand;
-                break;
-            default:
-                System.out.println("Invalid brand: " + brand + " ." +
-                        " Valid brands are: Samsung, LG, Sony, Toshiba.");
+        if (isValidBrand(brand)) {
+            this.brand = brand;
+        }
+        else {
+            System.out.printf("Invalid brand: %s. Valids brands are %s.\n",
+                    brand, Arrays.toString(VALID_BRANDS));
         }
     }
 

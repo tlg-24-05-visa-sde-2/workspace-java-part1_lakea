@@ -4,12 +4,12 @@ import java.util.Arrays;
 class TelevisionClientArgs {
     public static void main(String[] args) {
         //must first check for the presence of your required 3 arguments
-        if (args.length > 3) {
+        if (args.length < 3) {
             String usage = "Usuage: Java TelevisionClientArgs <brand> <volume> <display>";
-            String example = "Example: Java TelevisonCleintArgs Samgsun 32 PLASMA";
+            String example = "Example: Java TelevisionClientArgs Samsung 32 PLASMA";
             String note1 = "Note 1: supported displays are " + Arrays.toString(DisplayType.values());
             String note2 = "Note 2: Volume must be between " + Television.MIN_VOLUME + " and " + Television.MAX_VOLUME;
-            String note3 = "Note 3: Brand must be Sony, Samsung, LG, Toshiba";
+            String note3 = "Note 3: Supported brands are " + Arrays.toString(Television.VALID_BRANDS);
             System.out.println(usage);
             System.out.println(example);
             System.out.println(note1);

@@ -1,37 +1,32 @@
 class TelevisionValidation {
     public static void main(String[] args) {
-        Television tv1 = new Television();
-        tv1.setVolume(0);            // should stick
-        System.out.println("volume: " + tv1.getVolume());
+        Television tv = new Television();
+        tv.setVolume(0);            // should stick
+        System.out.println("volume: " + tv.getVolume());
 
-        tv1.setVolume(100);
-        System.out.println("volume: " + tv1.getVolume());
+        tv.setVolume(100);
+        System.out.println("volume: " + tv.getVolume());
 
-        tv1.setVolume(-1);
-        System.out.println("volume: " + tv1.getVolume());            //error because value is not valid
-
-
-        tv1.setVolume(101);
-        System.out.println("volume: " + tv1.getVolume());
+        tv.setVolume(-1);
+        tv.setVolume(101);
+        System.out.println("volume: " + tv.getVolume());
 
         System.out.println();
 
-        Television tv2 = new Television();
+Television Tv = new Television();
+        Tv.setBrand("Samsung");
+        System.out.println("brand: " + Tv.getBrand());
 
-        tv2.setVolume(0);            // should stick
-        System.out.println("volume: " + tv1.getVolume());
+        Tv.setBrand("LG");
+        System.out.println("brand: " + Tv.getBrand());
 
-        tv2.setVolume(100);
-        System.out.println("volume: " + tv1.getVolume());
+        Tv.setBrand("Sony");
+        System.out.println("brand: " + Tv.getBrand());
 
-        tv2.setVolume(-1);
-        System.out.println("volume: " + tv1.getVolume());            //error because value is not valid
+        Tv.setBrand("Toshiba");
+        System.out.println("brand: " + Tv.getBrand());
 
-
-        tv2.setVolume(101);
-        System.out.println("volume: " + tv1.getVolume());
-
-        System.out.println();
-
+        Tv.setBrand("INVALID");
+        System.out.println("brand: " + Tv.getBrand());
     }
 }

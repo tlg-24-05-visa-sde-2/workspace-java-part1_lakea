@@ -1,4 +1,8 @@
-import java.sql.SQLOutput;
+package com.entertainment.client;
+
+import com.entertainment.DisplayType;
+import com.entertainment.Television;
+
 import java.util.Arrays;
 
 class TelevisionClientArgs {

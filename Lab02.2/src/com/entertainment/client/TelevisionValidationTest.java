@@ -1,3 +1,7 @@
+package com.entertainment.client;
+
+import com.entertainment.Television;
+
 class TelevisionValidationTest {
 
     public static void main(String[] args) {

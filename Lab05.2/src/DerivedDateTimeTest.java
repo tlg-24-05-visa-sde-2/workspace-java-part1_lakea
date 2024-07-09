@@ -14,7 +14,10 @@
  */
 import java.time.*;
 import java.time.format.*;
+import java.time.temporal.TemporalAdjusters;
 import static java.time.temporal.TemporalAdjusters.*;
+
+import static java.time.DayOfWeek.*;  // you can now say MONDAY instead of DayOfWeek.MONDAY
 
 class DerivedDateTimeTest {
 
@@ -32,13 +35,16 @@ class DerivedDateTimeTest {
     }
 
     /**
-     * TASK: new American presidents are often measured by their performance during the first 100 days in office.
+     * TASK: new American presidents are often measured by their performance during the
+     * first 100 days in office.
      * Inauguration Day 2017 is Jan 20.  When is this president's 100-day deadline?
      *
      * RESULT:
      */
     public static void testPresidentsFirst100Days() {
-        // TODO
+        LocalDate inauguration = LocalDate.of(2017, 1, 20);
+        LocalDate deadline = inauguration.plusDays(100);
+        System.out.println(deadline);
     }
 
     /**
@@ -49,9 +55,15 @@ class DerivedDateTimeTest {
      * RESULT:
      */
     public static void testPopularBirthdays() {
-        // TODO: what is the average birthday of someone conceived on Valentine's Day?
+        // what is the average birthday of someone conceived on Valentine's Day?
+        LocalDate vday = LocalDate.of(2023, 2, 14);
+        LocalDate birth = vday.plusWeeks(38);
+        System.out.println(birth);
 
-        // TODO: what is the average birthday of someone conceived on New Year's Eve (after midnight)?
+        // what is the average birthday of someone conceived on New Year's Eve (after midnight)?
+        LocalDate nye = LocalDate.of(2023, 1, 1);
+        LocalDate birth2 = nye.plusWeeks(38);
+        System.out.println(birth2);
     }
 
     /**
@@ -62,7 +74,9 @@ class DerivedDateTimeTest {
      * RESULT:
      */
     public static void testEarlyRetirement() {
-        // TODO
+        LocalDate bday = LocalDate.of(1966, 12, 5);
+        LocalDate retirement = bday.plusYears(59).plusMonths(6);
+        System.out.println(retirement);
     }
 
     /**
@@ -73,28 +87,40 @@ class DerivedDateTimeTest {
      * RESULT:
      */
     public static void testLaborDay() {
-        // TODO
+        LocalDate sept1 = LocalDate.of(1966, 9, 1);
+        LocalDate laborDay = sept1.with(nextOrSame(MONDAY));
+        System.out.println(laborDay);
     }
 
     /**
-     * TASK: Election Day in the United States is defined as the Tuesday immediately after the 1st Monday in November.
+     * TASK: Election Day in the United States is defined as the Tuesday
+     * immediately after the 1st Monday in November.
      * When is Election Day 2024?
      *
      * RESULT:
      */
     public static void testElectionDay() {
-        // TODO
+        LocalDate nov1 = LocalDate.of(2024, 11, 1);
+        LocalDate election = nov1.with(nextOrSame(MONDAY)).plusDays(1);
+        System.out.println(election);
+        System.out.println(election.getDayOfWeek());
     }
 
     /**
      * TASK: Akesh and Samanta were married on 6/6/1969.
-     * They are planning their 50th wedding anniversary, and would like to throw a big party.
-     * If their anniversary does not fall on a Saturday, they'd like to have their party the following Saturday.
+     * They are planning their 50th wedding anniversary,
+     * and would like to throw a big party.
+     * If their anniversary does not fall on a Saturday,
+     * they'd like to have their party the following Saturday.
      * What is the date of the party?
      *
      * RESULT:
      */
     public static void testAnniversary() {
-        // TODO
+        LocalDate wedding = LocalDate.of(1969, 6, 6);
+        LocalDate anniversary = wedding.plusYears(50);
+        LocalDate party = anniversary.with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY));
+        System.out.println(party);
+        System.out.println(party.getDayOfWeek());
     }
 }

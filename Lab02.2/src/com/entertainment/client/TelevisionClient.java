@@ -1,3 +1,8 @@
+package com.entertainment.client;
+
+import com.entertainment.DisplayType;
+import com.entertainment.Television;
+
 /*
  * Application main class
  * In the main() method we will create a few tv objects and give them a test drive

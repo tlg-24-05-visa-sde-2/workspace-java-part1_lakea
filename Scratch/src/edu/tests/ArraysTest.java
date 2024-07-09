@@ -1,4 +1,5 @@
-import java.lang.reflect.Array;
+package edu.tests;
+
 import java.util.Arrays;
 
 class ArraysTest {

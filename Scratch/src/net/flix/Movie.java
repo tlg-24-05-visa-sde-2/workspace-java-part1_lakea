@@ -1,3 +1,7 @@
+package net.flix;
+
+import edu.tests.Rating;
+
 class Movie {
     // fields or instance variables
     private String title;

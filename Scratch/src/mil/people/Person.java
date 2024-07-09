@@ -1,4 +1,4 @@
-/*
+package mil.people;/*
 * An immutable class.
 * That is, a class definition written in such a way that instance of it (Person objects),
 * once created, cannot have their own properties changed.

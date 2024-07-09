@@ -1,21 +1,33 @@
+package net.vibes;
+
 public class Song {
 
     private String name;
-    private String genre;
+    private SongType genre;
     private String artist;
 
-    // Constructors, getters, setters, toString() method, and other methods
-
+    // Default constructor
     public Song() {
-        // Default constructor
     }
 
-    public Song(String name, String genre, String artist) {
+    public Song(String name) {
         this.name = name;
+    }
+
+    // Constructor with genre and artist parameters
+    public Song(SongType genre, String artist) {
         this.genre = genre;
         this.artist = artist;
     }
 
+    // Constructor with name, genre, and artist parameters
+    public Song(String name, SongType genre, String artist) {
+        this(name); // Calls the constructor that sets the name
+        this.genre = genre;
+        this.artist = artist;
+    }
+
+    // Getters and setters for name, genre, and artist
     public String getName() {
         return name;
     }
@@ -24,11 +36,11 @@ public class Song {
         this.name = name;
     }
 
-    public String getGenre() {
+    public SongType getGenre() {
         return genre;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(SongType genre) {
         this.genre = genre;
     }
 
@@ -40,7 +52,8 @@ public class Song {
         this.artist = artist;
     }
 
-    public void play() {
+    // Other methods
+    public void play(String iWantYouAround) {
         System.out.println("Playing: " + artist + " - " + name);
     }
 
@@ -48,18 +61,15 @@ public class Song {
         System.out.println("Pausing: " + artist + " - " + name);
     }
 
-    public void shuffle() {
-        System.out.println("Shuffling all songs in library");
+    public void changeSong() {
+        System.out.println("Changing song in library");
     }
-
-    // Assuming stop() method does not exist, so it's removed
-    // If needed, implement and add it to the class
 
     @Override
     public String toString() {
         return "Song{" +
                 "name='" + name + '\'' +
-                ", genre='" + genre + '\'' +
+                ", genre=" + genre +
                 ", artist='" + artist + '\'' +
                 '}';
     }

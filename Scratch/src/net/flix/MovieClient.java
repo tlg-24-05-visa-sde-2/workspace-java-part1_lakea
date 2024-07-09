@@ -1,3 +1,7 @@
+package net.flix;
+
+import edu.tests.Rating;
+
 class MovieClient {
     public static void main(String[] args) {
         Movie movie1 = new Movie("Dune");

@@ -46,8 +46,9 @@ class Television {
     private int volume;
     private DisplayType display = DisplayType.LED;
 
-    private boolean isMuted;            // for muting behavior
-    private int oldVolume;              // for muting behavior
+
+    private boolean isMuted;  // for muting behavior
+    private int oldVolume;    // for muting behavior
 
     // constructors - these get called when the client says "NEW"
     public Television() {

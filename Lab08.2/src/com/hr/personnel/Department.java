@@ -56,6 +56,30 @@ public class Department {
         }
     }
 
+
+    public void payEmployees() {
+        for (int i = 0; i < currentIndex; i++) {
+            employees[i].pay();
+        }
+    }
+    /*
+    * Office closure, i.e., all employees that take vacation are asked to do so.
+    */
+    public void holidayBreak() {
+        for (int i = 0; i < currentIndex; i++) {
+            if (employees[i] instanceof SalariedEmployee) {
+                // "downcast" the Employee reference employees[i] to more specific type SE
+                // we need to do this in order to call SalariedEmployee-specific methods
+
+                SalariedEmployee semp = (SalariedEmployee) employees[i];
+                semp.takeVacation();
+
+                // downcast and method call in one shot
+//                ((SalariedEmployee) employees[i]).takeVacation();
+            }
+        }
+    }
+
     // helper method to add an Employee to the array
     public void addEmployee(Employee emp) {
         employees[currentIndex++] = emp;

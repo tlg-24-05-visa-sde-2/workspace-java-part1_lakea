@@ -13,13 +13,22 @@ public class SalariedEmployee extends Employee {
 
     public SalariedEmployee(String name, LocalDate hireDate) {
         super(name, hireDate);
-
         // registerIn401K();
     }
 
     public SalariedEmployee(String name, LocalDate hireDate, double salary) {
         this(name, hireDate);
         setSalary(salary);
+    }
+
+    // "Action" or "business" methods
+    @Override
+    public void pay() {
+        System.out.println(getName() + " is paid salary " + getSalary());
+    }
+
+    public void takeVacation() {
+        System.out.println(getName() + " is on vacation");
     }
 
     // accessor methods

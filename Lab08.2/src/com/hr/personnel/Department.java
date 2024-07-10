@@ -26,14 +26,17 @@ public class Department {
     // fields
     private String name;
     private String location;
-    private Employee[] employees = new Employee[100];
+    // 1-to-many HAS A relationship
+    private final Employee[] employees = new Employee[100];     // initially filled with nulls
     private int currentIndex = 0;  // for dealing with the array
 
     // constructors
     public Department() {
+        super();
     }
 
     public Department(String name, String location) {
+        super();
         setName(name);
         setLocation(location);
     }
@@ -75,6 +78,7 @@ public class Department {
         this.location = location;
     }
 
+    @Override
     public String toString() {
         return "Department: name=" + getName() + ", location=" + getLocation();
     }

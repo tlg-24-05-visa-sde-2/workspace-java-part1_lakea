@@ -25,6 +25,8 @@ class HRClient {
         // add Employees to it
         dept.addEmployee(new Employee("Jason", LocalDate.of(1990, 8, 24)));
         dept.addEmployee(new Employee("Julie", LocalDate.of(2000, 2, 2)));
+        dept.addEmployee(new Employee("Brandon", LocalDate.of(1997, 1, 28)));
+        dept.addEmployee(new Employee("Ciara", LocalDate.of(1997, 2, 17)));
 
         // list its Employees
         System.out.println("\nList employees:");

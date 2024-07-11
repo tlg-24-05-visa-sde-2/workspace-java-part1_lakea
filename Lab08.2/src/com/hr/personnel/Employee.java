@@ -32,23 +32,24 @@ public abstract class Employee {
     }
 
     public Employee(String name, LocalDate hireDate) {
+        super();
         setName(name);
         setHireDate(hireDate);
     }
 
     // business methods
     // ALL Employees work(), so the method goes up here
-    // They all work() the sane way, i.e., "hard" so we code up here too
-    // It's inherited by both subclasses and NOT overridden
+    // They all work() the same way, i.e., "hard," so we code it up here, too
+    // It's inherited by both subclasses, NOT overridden
     public void work() {
         System.out.println(getName() + " working hard since " + getHireDate());
     }
 
-    // ALL employees get paid so the method goes up here
-    // BUT they don't all do it the same way SE is fixed salary, HE is rate*hours
-
-
-    public abstract void pay ();
+    // ALL Employees get paid, so the method goes up here
+    // BUT they don't do it the same way - SE is fixed-salary, HE is rate*hours
+    // We need a way to say THAT "all Employees get paid," BUT we don't know HOW (up here).
+    // All we have is name and hireDate, we can't get the dollar figure
+    public abstract void pay();
 
     // accessor methods
     public String getName() {
@@ -69,6 +70,6 @@ public abstract class Employee {
 
     @Override
     public String toString() {
-        return "Employee: name=" + getName() + ", hireDate=" + getHireDate();
+        return getClass().getSimpleName() + ": name=" + getName() + ", hireDate=" + getHireDate();
     }
 }

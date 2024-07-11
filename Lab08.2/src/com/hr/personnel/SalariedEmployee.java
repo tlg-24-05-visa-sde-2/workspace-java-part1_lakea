@@ -1,19 +1,20 @@
+
 package com.hr.personnel;
 
 import java.time.LocalDate;
 
 public class SalariedEmployee extends Employee {
-    //fields
+    // fields
     private double salary;
 
-    //constructors
+    // constructors
     public SalariedEmployee() {
         super();
     }
 
     public SalariedEmployee(String name, LocalDate hireDate) {
         super(name, hireDate);
-        // registerIn401K();
+        // registerIn401k();
     }
 
     public SalariedEmployee(String name, LocalDate hireDate, double salary) {
@@ -21,7 +22,7 @@ public class SalariedEmployee extends Employee {
         setSalary(salary);
     }
 
-    // "Action" or "business" methods
+    // "action" or "business" methods
     @Override
     public void pay() {
         System.out.println(getName() + " is paid salary " + getSalary());
@@ -42,7 +43,6 @@ public class SalariedEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "salariedEmployee: name=" +getName() + ", hireDate=" + getHireDate() +
-                ", salary=" + getSalary();
+        return super.toString() + ", salary=" + getSalary();
     }
 }

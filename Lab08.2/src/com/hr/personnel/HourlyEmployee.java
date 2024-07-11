@@ -1,15 +1,14 @@
+
 package com.hr.personnel;
 
 import java.time.LocalDate;
 
 public class HourlyEmployee extends Employee {
-
     // fields
     private double rate;
     private double hours;
 
     // constructors
-
     public HourlyEmployee() {
         super();
     }
@@ -24,16 +23,14 @@ public class HourlyEmployee extends Employee {
         setHours(hours);
     }
 
-    // "Action" or "business"
+    // "action" or "business" methods
     @Override
     public void pay() {
         double payment = getRate() * getHours();
         System.out.println(getName() + " is paid hourly " + payment);
     }
 
-
-    //accessor methods
-
+    // accessor methods
     public double getRate() {
         return rate;
     }
@@ -52,8 +49,6 @@ public class HourlyEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "HourlyEmployee: name=" + getName() + ", hireDate=" + getHireDate() +
-                ", rate=" + getRate() + ", hours=" + getHours();
+        return super.toString() + ", rate=" + getRate() + ", hours=" + getHours();
     }
-
 }

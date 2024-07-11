@@ -11,5 +11,12 @@ class PersonClient {
         System.out.printf("%s is %s years old\n", p1.name(), p1.age());
 
         System.out.println(p1);  // toString() automatically called
+        System.out.println();
+
+        PersonRecord p2 = new PersonRecord("Miink", LocalDate.of(2016, 03, 30));
+
+        System.out.printf("%s is %s years old\n", p2.name(), p2.age());
+
+        System.out.println(p2);
     }
 }

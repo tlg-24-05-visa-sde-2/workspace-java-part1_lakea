@@ -5,7 +5,7 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright LearningPatterns Inc.
  */
- 
+
 package gov.irs;
 
 /**
@@ -26,7 +26,7 @@ public class IRS {
             System.out.println();
         }
     }
-    
+
     // helper method to add a TaxPayer to the array
     // what types of objects can be passed to this method?
     public void register(TaxPayer payer) {

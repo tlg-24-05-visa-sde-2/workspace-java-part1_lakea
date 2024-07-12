@@ -36,6 +36,18 @@ public class SalariedEmployee extends Employee implements TaxPayer {
         System.out.println(getName() + " paid taxes of " + taxes);
     }
 
+    public void fileReturn() {
+        TaxPayer.super.fileReturn();
+    }
+
+    public double getDefaultStandardDeduction() {
+        return TaxPayer.super.getDefaultStandardDeduction();
+    }
+
+    public double getStandardDeduction() {
+        return 0;
+    }
+
     public void takeVacation() {
         System.out.println(getName() + " is on vacation");
     }

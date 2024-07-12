@@ -18,6 +18,19 @@ public class Executive extends SalariedEmployee {
         super(name, hireDate, salary);
     }
 
+
+    // opt-in to provide my own way of filing instead of doing it the default way by US Mail
+    @Override // interface TaxPayer (default method)
+    public void fileReturn() {
+        System.out.println("Return filed electronically");
+    }
+
+    // I opt in to provide my own way to file taxes instead of using the default method
+    @Override // interface TaxPayer (default method)
+    public double getStandardDeduction () {
+        return 0.2 * getSalary();
+    }
+
     //business methods
     @Override
     public void work() {

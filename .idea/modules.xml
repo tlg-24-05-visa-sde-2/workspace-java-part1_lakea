@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/Lab09.1/Lab09.1.iml" filepath="$PROJECT_DIR$/Lab09.1/Lab09.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab10-Extra/Lab10-Extra.iml" filepath="$PROJECT_DIR$/Lab10-Extra/Lab10-Extra.iml" />
       <module fileurl="file://$PROJECT_DIR$/Lab10.1/Lab10.1.iml" filepath="$PROJECT_DIR$/Lab10.1/Lab10.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab11.1/Lab11.1.iml" filepath="$PROJECT_DIR$/Lab11.1/Lab11.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/MiniLab05.1/MiniLab05.1.iml" filepath="$PROJECT_DIR$/MiniLab05.1/MiniLab05.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/MiniLab08.1/MiniLab08.1.iml" filepath="$PROJECT_DIR$/MiniLab08.1/MiniLab08.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Part1_Lab11-Extra_Collections/Part1_Lab11-Extra_Collections.iml" filepath="$PROJECT_DIR$/Part1_Lab11-Extra_Collections/Part1_Lab11-Extra_Collections.iml" />
@@ -20,6 +21,7 @@
       <module fileurl="file://$PROJECT_DIR$/Shape/Shape.iml" filepath="$PROJECT_DIR$/Shape/Shape.iml" />
       <module fileurl="file://$PROJECT_DIR$/VolumePresets/VolumePresets.iml" filepath="$PROJECT_DIR$/VolumePresets/VolumePresets.iml" />
       <module fileurl="file://$PROJECT_DIR$/WhiteboardModel/WhiteboardModel.iml" filepath="$PROJECT_DIR$/WhiteboardModel/WhiteboardModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WhiteboardModel_Kea_Reviewed/WhiteboardModel_Kea_Reviewed.iml" filepath="$PROJECT_DIR$/WhiteboardModel_Kea_Reviewed/WhiteboardModel_Kea_Reviewed.iml" />
     </modules>
   </component>
 </project>

@@ -140,7 +140,7 @@ public class InMemoryCatalog implements Catalog {
     /**
      * TASK: find all "rock" items whose price is less than or equal to the specified price.
      */
-    public Collection<MusicItem> findRockByPrice(double price) {
+    public Collection<MusicItem> findLessThanRock(double price) {
         Collection<MusicItem> result = new ArrayList<>();
 
         for (MusicItem item : catalogData) {
@@ -181,8 +181,6 @@ public class InMemoryCatalog implements Catalog {
     /**
      * TASK: find the average price of items in the specified genre (MusicCategory).
      */
-    public double
-
 
     /**
      * TASK: are all items priced at least $10?

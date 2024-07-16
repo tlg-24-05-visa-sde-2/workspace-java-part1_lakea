@@ -40,7 +40,7 @@ class InMemoryCatalogTest {
     private static void testFindRockByPrice() {
         InMemoryCatalog catalog = new InMemoryCatalog();
 
-        Collection<MusicItem> cheapRockItems = catalog.findRockByPrice(12.0);
+        Collection<MusicItem> cheapRockItems = catalog.findLessThanRock(12.0);
         dump(cheapRockItems);
     }
 

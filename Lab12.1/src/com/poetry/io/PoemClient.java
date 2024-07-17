@@ -8,11 +8,9 @@
 
 package com.poetry.io;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class PoemClient {
 
@@ -20,7 +18,7 @@ public class PoemClient {
      * To run one method at a time, uncomment the call to the one you want to execute.
      */
     public static void main(String[] args) {
-        // readPoem();
+//         readPoem();
         writePoem();
     }
 
@@ -37,6 +35,15 @@ public class PoemClient {
      * The try-with-resources below allows you to initialize the stream and auto-close it.
      */
     private static void readPoem() {
+        try {
+            String poem = Files.readString(Path.of("famous-poem.txt"));
+            System.out.println(poem);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        /*
         try (BufferedReader reader = new BufferedReader(new FileReader("famous-poem.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -46,6 +53,7 @@ public class PoemClient {
         catch (IOException e) {
             e.printStackTrace();
         }
+         */
     }
 
     /**
@@ -60,14 +68,31 @@ public class PoemClient {
      * Use a try-with-resources to initialize the stream and auto-close it.
      */
     private static void writePoem() {
-        try (PrintWriter writer = new PrintWriter(new FileWriter("haiku.txt"))) {
-            writer.println("Java is hard");
-            writer.println("Java is not cool");
-            writer.println("I cant wait to learn python");
-            writer.println("And be done with school");
+        String haiku = """
+                Shopping is fun
+                Shopping is cool
+                I think I want to buy some Chanel
+                Just because it's something to do
+                """;
+
+        try {
+            Files.writeString(Path.of("haiku.txt"), haiku);
         }
         catch (IOException e) {
             e.printStackTrace();
         }
+
+
+        /*
+        try (PrintWriter writer = new PrintWriter(new FileWriter("haiku.txt"))) {
+            writer.println("Shopping is fun");
+            writer.println("Shopping is cool");
+            writer.println("I think I want to buy some Chanel");
+            writer.println("Just because it's something to do");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+         */
     }
 }

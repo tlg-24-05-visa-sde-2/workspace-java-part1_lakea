@@ -3,32 +3,32 @@ package net.vibes;
 /**
  * JR: Does not convincingly demonstrate understanding of program concepts, is incomplete,
  * and flawed in several areas.
- *
+ * <p>
  * Business methods are trivial and use direct field access instead of
  * leveraging data encapsulation and calling the getter methods.
- *
+ * <p>
  * No data validation whatsoever.
- *
+ * <p>
  * See comments below and in the other classes.
- *
+ * <p>
  * Code is clean, readable, well-formatted: needs improvement.
- *
+ * <p>
  * Class participation has been adequate, but could still be improved.
- *
+ * <p>
  * Class names, package names, and overall structure are not correct.
- *  There is no base package, e.g., net.music,
- *  which would yield the following package names for the assignment:
- *   net.music
- *   net.music.client
- *   net.music.test
- *
- *  Instead, we have this;
- *   net.client
- *   net.test
- *   net.vibes
- *
- *  'net' is not a suitable base package name, and these packages do not adhere
- *  to what was required.
+ * There is no base package, e.g., net.music,
+ * which would yield the following package names for the assignment:
+ * net.music
+ * net.music.client
+ * net.music.test
+ * <p>
+ * Instead, we have this;
+ * net.client
+ * net.test
+ * net.vibes
+ * <p>
+ * 'net' is not a suitable base package name, and these packages do not adhere
+ * to what was required.
  */
 public class Song {
 

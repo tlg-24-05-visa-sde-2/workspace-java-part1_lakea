@@ -10,11 +10,11 @@ import net.vibes.SongType;
 
 /**
  * JR: usage banner flawed and lacking in detail.
- *  - Example usages do not work, resulting in unhandled exception and program crash.
- *  - Supported genres are not listed, user has no way to figure out how to run it.
- *
+ * - Example usages do not work, resulting in unhandled exception and program crash.
+ * - Supported genres are not listed, user has no way to figure out how to run it.
+ * <p>
  * Appears to be a direct copy of instructor's example for Guitar, taken from GitHub repo.
- *  https://github.com/tlg-24-05-visa-sde-2/workspace-java-part1_jay-rostosky/blob/main/WhiteboardModel/src/com/music/client/GuitarClientArgs.java
+ * https://github.com/tlg-24-05-visa-sde-2/workspace-java-part1_jay-rostosky/blob/main/WhiteboardModel/src/com/music/client/GuitarClientArgs.java
  */
 public class SongClientArgs {
 
